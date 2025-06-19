@@ -1,0 +1,40 @@
+#!/bin/bash
+
+# Step 1: Gg
+
+cd pterodactyl
+
+sudo su
+
+cat <<EOF > /etc/pterodactyl/config.yml
+debug: false
+uuid: 491c2b49-75e5-45a3-a40c-775727a8ab55
+token_id: rs25NvU9IYdES7Fb
+token: VOg7djWrwI7Hx3oRpCfK2UPeyEDKyS4dg8S7O0DIDHO7M0ajKLI0myGTJUBnXnML
+api:
+  host: 0.0.0.0
+  port: 443
+  ssl:
+    enabled: false
+    cert: /etc/letsencrypt/live/2becc931b8e9bb3cc32f8fe049b7fd59.serveo.net/fullchain.pem
+    key: /etc/letsencrypt/live/2becc931b8e9bb3cc32f8fe049b7fd59.serveo.net/privkey.pem
+  upload_limit: 100
+system:
+  data: /var/lib/pterodactyl/volumes
+  sftp:
+    bind_port: 2022
+allowed_mounts: []
+remote: 'https://redesigned-guacamole-wr9x56r7q4xwh56v-80.app.github.dev'
+EOF
+
+cd pterodactyl
+
+sudo su
+
+nano /etc/pterodactyl/config.yml
+
+ls
+
+cd wings
+
+docker-compose up -d --force-recreate
