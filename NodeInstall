@@ -27,12 +27,6 @@ allowed_mounts: []
 remote: 'https://redesigned-guacamole-wr9x56r7q4xwh56v-80.app.github.dev'
 EOF
 
-cd pterodactyl
-
-sudo su
-
-nano /etc/pterodactyl/config.yml
-
 ls
 
 cd wings
